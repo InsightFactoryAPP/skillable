@@ -6,7 +6,7 @@
 
 A curated, community-driven collection of [Agent Skills](https://agentskills.io) — plain-markdown playbooks that turn "explain it to the agent again" into a single slash command. Built on the open `SKILL.md` format, so they work with Cursor, Claude Code, and [any skills-capable agent](https://agentskills.io/clients).
 
-[![Skills](https://img.shields.io/badge/skills-20-blueviolet)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-21-blueviolet)](#available-skills)
 [![skills.sh](https://img.shields.io/badge/skills.sh-install-black.svg)](https://skills.sh)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -90,7 +90,7 @@ Using a different agent? Same idea — see the [client list](https://agentskills
 
 ## Available skills
 
-Legend: 🤖 dependency autopilot · 🚑 CI & issues · 🛠 upgrades & building · 🎲 ideation
+Legend: 🤖 dependency autopilot · 🚑 CI & issues · 🛠 upgrades & building · 🎲 ideation & prototyping
 
 | Skill | What it does |
 |-------|--------------|
@@ -114,6 +114,7 @@ Legend: 🤖 dependency autopilot · 🚑 CI & issues · 🛠 upgrades & buildin
 | [sweep-dependency-prs](skills/sweep-dependency-prs/) | 🤖 Approve & merge every green Dependabot/Renovate PR in a repo; dispatch fixes for the red ones |
 | [upgrade-node-across-org](skills/upgrade-node-across-org/) | 🛠 Find every repo you own that pins Node (orgs included) and fan out upgrade-node-version — one PR per repo |
 | [upgrade-node-version](skills/upgrade-node-version/) | 🛠 Bump Node across `.nvmrc`, `engines`, CI workflows, and Dockerfiles — then fix the fallout |
+| [wireframe-feature](skills/wireframe-feature/) | 🎲 Turn a complex feature idea into several interactive, responsive wireframe artifacts that reuse your app's layout, tokens, and light/dark themes — then iterate on the one you pick |
 
 ## 🔍 Anatomy of a skill
 
