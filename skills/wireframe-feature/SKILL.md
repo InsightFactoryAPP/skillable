@@ -38,7 +38,7 @@ Do not run a questionnaire. Fill gaps with sensible assumptions and list them in
 
 ## 1. Read the project's design language
 
-Before drawing anything, extract what makes the app look and feel like itself. See [references/design-extraction.md](references/design-extraction.md) for where to look per stack. Capture, into a short working note:
+Before drawing anything, extract what makes the app look and feel like itself. If the project's agent instructions (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`) point to a published design system (e.g. from `extract-design-system`), start from it instead of re-extracting, and only read the source to fill gaps or confirm it is still current. See [references/design-extraction.md](references/design-extraction.md) for where to look per stack. Capture, into a short working note:
 
 1. **Tokens** — colors (as the project names them: `--background`, `primary-500`, `$brand`…), radii, spacing scale, shadows, borders, z-layers.
 2. **Themes** — whether light and dark both exist, and the switching mechanism (`class="dark"`, `[data-theme]`, `prefers-color-scheme`, a theme provider). Record the token values for *each* theme. If the app has only one theme, ship only that one.
