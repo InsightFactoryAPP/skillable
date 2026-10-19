@@ -190,7 +190,7 @@ If listing installations 403s or the repo is not in the list, skip that repo: te
 
 ```bash
 jq -n --arg agent "$AGENT_MENTION" --arg login "$NOTIFY_LOGIN" --arg n "$N" \
-  '{body: "<!-- skillable-nudge-stale-prs-trigger -->\n@\($agent) Reply as yourself with exactly one top-level comment, then stop. Do not push, review, approve, or change code. The comment body must be exactly:\n\n<!-- skillable-nudge-stale-prs -->\n@\($login) this PR is over \($n) days old and may not have shown up in your GitHub notifications. Please review/merge it when you can."}' \
+  '{body: "<!-- skillable-nudge-stale-prs-trigger -->\n@\($agent) Reply as yourself with exactly one top-level comment, then stop. Do not push, review, approve, or change code. The comment body must be exactly:\n" + "\n<!-- skillable-nudge-stale-prs -->\n@\($login) this PR is over \($n) days old and may not have shown up in your GitHub notifications. Please review/merge it when you can."}' \
   | gh api "repos/$OWNER_REPO/issues/$NUMBER/comments" --input -
 ```
 
