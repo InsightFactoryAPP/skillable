@@ -104,6 +104,27 @@ Check, in order, and keep the first hit: `.nvmrc`, `.node-version`, `package.jso
 { "user": "login", "orgs": ["org1", "org2"], "filters": "none", "lastRefresh": "2026-10-19T07:00:00Z" }
 ```
 
+## KPI tile filters
+
+Each KPI tile and sub-line chip is a filter over `repos` documents. Repo-count tiles show the number of documents matching their predicate, so the count and the filtered table always agree.
+
+| Tile / chip | Hash | Predicate |
+| --- | --- | --- |
+| Needs you | `#status=red` | `status == "red"` |
+| Attention | `#status=yellow` | `status == "yellow"` |
+| Healthy | `#status=green` | `status == "green"` (sub-line "of N repos" clears the filter) |
+| Critical + high alerts | `#alerts=critical-high` | `alerts.critical + alerts.high > 0` |
+| ↳ critical | `#alerts=critical` | `alerts.critical > 0` |
+| ↳ moderate | `#alerts=medium` | `alerts.medium > 0` |
+| ↳ repos with alerts off | `#alerts=off` | `alerts == null` |
+| Red default branch | `#ci=red` | `ci.state == "red"` |
+| ↳ repos with no Actions runs | `#ci=none` | `ci.state == "none"` |
+| Open bot PRs | `#bot=open` | `botPrs.total > 0` |
+| ↳ red | `#bot=red` | `botPrs.red > 0` |
+| ↳ repos on Node below LTS | `#node=behind` | `node.behind == true` |
+
+Alert tiles count alerts but filter to the repos that have them; say so in the filter label ("10 alerts in 6 repos"). An unknown or stale hash falls back to no filter.
+
 ## Refresh semantics
 
 - Upsert every collected repo document; delete documents for repos no longer in the union.
