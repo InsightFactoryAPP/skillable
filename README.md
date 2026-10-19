@@ -6,7 +6,7 @@
 
 A curated, community-driven collection of [Agent Skills](https://agentskills.io) — plain-markdown playbooks that turn "explain it to the agent again" into a single slash command. Built on the open `SKILL.md` format, so they work with Cursor, Claude Code, and [any skills-capable agent](https://agentskills.io/clients).
 
-[![Skills](https://img.shields.io/badge/skills-21-blueviolet)](#available-skills)
+[![Skills](https://img.shields.io/badge/skills-25-blueviolet)](#available-skills)
 [![skills.sh](https://img.shields.io/badge/skills.sh-install-black.svg)](https://skills.sh)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -90,25 +90,29 @@ Using a different agent? Same idea — see the [client list](https://agentskills
 
 ## Available skills
 
-Legend: 🤖 dependency autopilot · 🚑 CI & issues · 🛠 upgrades & building · 🎲 ideation & prototyping
+Legend: 🤖 dependency autopilot · 🚑 CI & issues · 🛠 upgrades & building · 🎲 ideation & prototyping · 🧭 visibility & understanding
 
 | Skill | What it does |
 |-------|--------------|
 | [align-minimum-release-age](skills/align-minimum-release-age/) | 🤖 Sync the dependency cooldown between pnpm/npm/Poetry and Renovate to the most conservative value — one repo or your whole fleet |
+| [architecture-map](skills/architecture-map/) | 🧭 Parallel subagents map your codebase into an interactive explainer — module graph from real imports, key-flow sequence diagrams, guided tour with line permalinks, hotspots from git history |
 | [build-landing-page](skills/build-landing-page/) | 🛠 Idea → scaffolded, designed, analytics-wired, **deployed** landing page with a live URL |
 | [claim-all-unassigned-prs](skills/claim-all-unassigned-prs/) | 🚑 Find unassigned PRs opened by others across **every repo you can write to** (orgs included) and fan out claim-unassigned-prs |
 | [claim-unassigned-prs](skills/claim-unassigned-prs/) | 🚑 Request your review on every open PR in a repo that has no assignee, reviewer, or review yet and was opened by someone else |
 | [dedupe-and-prune-deps](skills/dedupe-and-prune-deps/) | 🤖 Collapse duplicate versions, declare phantom imports, remove unused dependencies |
 | [drift](skills/drift/) | 🎲 One prompt, every possibility — k distinct answers with self-assessed probabilities, ranked from conventional to wild (verbalized sampling) |
+| [extract-design-system](skills/extract-design-system/) | 🎲 Extract tokens, themes, typography, and components from source into a living design-system artifact — plus a drift report of hard-coded values — that wireframes reuse |
 | [fix-dependabot-alert](skills/fix-dependabot-alert/) | 🤖 Remediate a Dependabot **security alert** end-to-end: bump/override, branch, PR |
 | [fix-dependabot-pr](skills/fix-dependabot-pr/) | 🤖 Take over a Dependabot bump PR — grouped updates and major migrations included — and push commits until CI passes |
 | [fix-failing-ci](skills/fix-failing-ci/) | 🚑 Paste a red Actions run URL; get diagnosis, a fix on the built branch, and a green build |
 | [fix-issue](skills/fix-issue/) | 🚑 Pick an open GitHub issue, implement it on a fresh branch, open the PR |
 | [fix-renovate-pr](skills/fix-renovate-pr/) | 🤖 Take over a Renovate bump PR and push commits until CI passes |
+| [fleet-health-dashboard](skills/fleet-health-dashboard/) | 🧭 One live dashboard for **every repo you own** (orgs included): bot PRs, alerts, red CI, stale PRs, Node pins — each row names the skill that fixes it; refreshable on a schedule |
 | [nudge-stale-prs](skills/nudge-stale-prs/) | 🚑 Find open PRs older than 2 days across every repo you can write to and have Cursor/Claude/Codex's GitHub user tag you to review/merge — self-mentions do not notify |
 | [optimize-all-github-actions](skills/optimize-all-github-actions/) | 🚑 Find every repo you own with Actions (orgs included) and fan out optimize-github-actions — one PR per repo |
 | [optimize-github-actions](skills/optimize-github-actions/) | 🚑 Analyze workflows, cut wasted Actions minutes (duplicate runs, redundant jobs, matrix bloat), open a PR — without weakening security |
 | [prune-deps-across-org](skills/prune-deps-across-org/) | 🤖 Find every JS repo you own (orgs included) and fan out dedupe-and-prune-deps — one hygiene PR per repo |
+| [spike-variants](skills/spike-variants/) | 🎲 Build a feature N ways in parallel worktrees against one acceptance contract, compare them with real metrics, ship the winner as a PR |
 | [sweep-all-dependabot-alerts](skills/sweep-all-dependabot-alerts/) | 🤖 Find open Dependabot **security alerts** across every repo you own (orgs included) and fan out fix-dependabot-alert |
 | [sweep-all-dependency-prs](skills/sweep-all-dependency-prs/) | 🤖 Fan out across **every repo you own** (orgs included) and sweep their bot PRs in parallel |
 | [sweep-dependency-prs](skills/sweep-dependency-prs/) | 🤖 Approve & merge every green Dependabot/Renovate PR in a repo; dispatch fixes for the red ones |
